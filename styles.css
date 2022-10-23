@@ -1,0 +1,168 @@
+ *{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+ 
+ body{
+    background-color: #A8A8A8;
+    color:black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0px;
+    margin: 0px;
+
+ }
+ #specialp{
+
+    color: blue;
+ }
+ p{
+    color: rgb(22, 22, 22);
+ }
+.boldtext{
+   
+    font-style: italic;
+}
+h1{
+ 
+    font-family:'Segoe UI';
+    font-weight: 100;
+    font-size: 90px;
+}
+section{
+    width: 85%;
+    /*min-width: 600px;*/
+    margin-left:auto;
+    margin-right: auto;
+    background-color: whitesmoke;
+    margin-top: 10pX;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.logo_holder{
+ position:fixed;/*denne skal altid være på det samme stedet*/
+ width:100%;
+ bottom: 0px;
+ right:0px;
+ padding: 10px;
+ padding: 10px;
+}
+
+.logo{
+    width: 70px;
+    border-radius: 10px;
+    padding:  5px;
+    margin-left:auto;
+    
+}
+
+nav{
+    display: flex;
+    flex-direction: column;
+    background-color: #D9D9D9;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0px;
+    width: 100%;
+    display: flex; /*denne gjør at dette elemente overrider de andre elementene som ligger utenfor dette*/
+   
+}
+#check_menu{
+    display:none;
+}
+@media screen and (max-width: 900px){
+    /* buker usynlig checkbox for å toggle på og av menyen i #navul */
+
+    #check_menu:not(:checked) ~ #navul{
+        display:none;
+    }
+    nav li a:link,a:hover,a:visited,a:active{
+        text-decoration: none;
+        color:white;    
+        
+        
+    }
+    #check_menu:checked ~ #navul{ /*targeter kun ul i nav elementet*/
+        display: block;
+        position:absolute;
+        top:40px;
+        left:10px;
+        list-style:none;
+        width: 20ch;
+        padding:10px;
+        background-color: #52ACFF;
+        color:white;
+        border-radius: 5px;
+        
+        margin-top: 5px;
+    }
+    nav li{
+        padding-bottom: 3px;
+    }
+    .menu_icon{
+        width:2.5ch; /* tre symbol i vidde*/
+        text-align: center;
+        font-size: x-large;
+        background-color: #52ACFF;
+        color:white;
+        margin-left:10px;
+        padding: 3px 6px;
+        border-radius: 5px;
+    }
+    .menu_icon:hover{
+        background-color: #3677b3;
+        transition: ease-out 0.2s;
+    }
+    
+    h1{
+        font-size: xx-large;
+    }
+}
+
+@media screen and (min-width: 900px){
+    .menu_icon{
+        display:none;
+    }
+    nav ul{ /*targeter kun ul i nav elementet*/
+        list-style:none;
+        width: 100%;
+    }
+    nav li{
+        padding: 6px 10px;
+        background-color: #52ACFF;
+        color:white;
+        border-radius: 5px;
+        margin-left: 5%;
+        margin-top: 5px;
+        display: inline-block;
+        transition: ease-out 0.2s;
+    }
+    nav li:hover{
+        background-color: #3677b3;
+        transition: ease-out 0.2s;
+    }
+    nav li:active{
+        background-color: #1f4263;
+        
+    }
+    nav li a:link,a:hover,a:visited,a:active{
+        text-decoration: none;
+        color:white;    
+    }
+    
+}
+
+
+
+
+
+
+/* . definerer class */
+/* # definerer id */
+/* du kan liste elementer med komma */
+/* ingen symboler foran tags/elementer */
