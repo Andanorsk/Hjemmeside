@@ -159,11 +159,31 @@ nav{
 
 
 .bilde{
-    width: 50%;
-    
+    width: 80%;
+    display:block;
+    margin:0 auto;
+    border: 2px solid;
+    border-bottom-color: lightgrey;
+    border-right-color: lightgrey;
+    border-top-color: rgb(58, 58, 58);
+    border-left-color: rgb(58, 58, 58);
 }
 
+.bilde_container{
+    padding: 20px;
 
+}
+p{
+    padding-bottom: 4px;
+    line-height:2.5ch;
+}
+h4{
+    padding-top: 4px;
+}
+h2{
+    padding-top: 6px;
+    padding-bottom: 3px;
+}
 
 /* . definerer class */
 /* # definerer id */
