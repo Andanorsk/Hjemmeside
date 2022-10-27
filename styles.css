@@ -31,16 +31,16 @@ h1{
 }
 section{
     width: 85%;
-    /*min-width: 600px;*/
     margin-left:auto;
     margin-right: auto;
     background-color: whitesmoke;
-    margin-top: 10pX;
+    margin-top: 60px;
     padding-top: 10px;
     padding-bottom: 20px;
     border-radius: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5vh;
+    padding-right: 5vh;
+
 
 }
 
@@ -70,7 +70,12 @@ nav{
     margin: 0px;
     width: 100%;
     display: flex; /*denne gjør at dette elemente overrider de andre elementene som ligger utenfor dette*/
+    position: fixed;
+    top:0;
    
+}
+a,a:visited{
+    color: black;
 }
 #check_menu{
     display:none;
@@ -81,7 +86,7 @@ nav{
     #check_menu:not(:checked) ~ #navul{
         display:none;
     }
-    nav li a:link,a:hover,a:visited,a:active{
+    li > a,li > a:hover,li > a:visited,li > a:active{
         text-decoration: none;
         color:white;    
         
@@ -141,6 +146,8 @@ nav{
         margin-top: 5px;
         display: inline-block;
         transition: ease-out 0.2s;
+        width:140px;
+        text-align: center;
     }
     nav li:hover{
         background-color: #3677b3;
@@ -150,7 +157,7 @@ nav{
         background-color: #1f4263;
         
     }
-    nav li a:link,a:hover,a:visited,a:active{
+    li>a:link,li>a:hover,li>a:visited,li>a:active{
         text-decoration: none;
         color:white;    
     }
@@ -159,7 +166,7 @@ nav{
 
 
 .bilde{
-    width: 80%;
+    width: max(80%, 320px);
     display:block;
     margin:0 auto;
     border: 2px solid;
@@ -176,6 +183,7 @@ nav{
 p{
     padding-bottom: 4px;
     line-height:2.5ch;
+
 }
 h4{
     padding-top: 4px;
@@ -185,6 +193,12 @@ h2{
     padding-bottom: 3px;
 }
 
+#p1{
+    margin-top: 50px;
+    padding: 4px;
+    font-size:24px;
+    border: 1px solid #1d1d1d;
+}
 /* . definerer class */
 /* # definerer id */
 /* du kan liste elementer med komma */
