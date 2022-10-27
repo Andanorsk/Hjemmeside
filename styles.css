@@ -86,7 +86,7 @@ a,a:visited{
     #check_menu:not(:checked) ~ #navul{
         display:none;
     }
-    li > a,li > a:hover,li > a:visited,li > a:active{
+    ul > a,ul > a:hover,ul > a:visited,ul> a:active{
         text-decoration: none;
         color:white;    
         
@@ -106,8 +106,9 @@ a,a:visited{
         
         margin-top: 5px;
     }
-    nav li{
+    li{
         padding-bottom: 3px;
+        padding-left:3px;
     }
     .menu_icon{
         width:2.5ch; /* tre symbol i vidde*/
@@ -127,6 +128,14 @@ a,a:visited{
     h1{
         font-size: xx-large;
     }
+    li:hover{
+        background-color: #3677b3;
+        transition: ease-out 0.2s;
+    }
+    li:active{
+        background-color: #1f4263;
+        
+    }
 }
 
 @media screen and (min-width: 900px){
@@ -137,7 +146,7 @@ a,a:visited{
         list-style:none;
         width: 100%;
     }
-    nav li{
+    li{
         padding: 6px 10px;
         background-color: #52ACFF;
         color:white;
@@ -149,15 +158,15 @@ a,a:visited{
         width:140px;
         text-align: center;
     }
-    nav li:hover{
+    li:hover{
         background-color: #3677b3;
         transition: ease-out 0.2s;
     }
-    nav li:active{
+    li:active{
         background-color: #1f4263;
         
     }
-    li>a:link,li>a:hover,li>a:visited,li>a:active{
+    ul>a:link,ul>a:hover,ul>a:visited,ul>a:active{
         text-decoration: none;
         color:white;    
         width:140px;
