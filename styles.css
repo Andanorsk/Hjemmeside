@@ -34,12 +34,13 @@ section{
     margin-left:auto;
     margin-right: auto;
     background-color: whitesmoke;
-    margin-top: 10pX;
+    margin-top: 60px;
     padding-top: 10px;
     padding-bottom: 20px;
     border-radius: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 5vh;
+    padding-right: 5vh;
+
 
 }
 
@@ -54,7 +55,7 @@ section{
 
 .logo{
     width: 70px;
-    border-radius: 10px;
+    border-radius: 5px;
     padding:  5px;
     margin-left:auto;
     
@@ -69,7 +70,12 @@ nav{
     margin: 0px;
     width: 100%;
     display: flex; /*denne gjør at dette elemente overrider de andre elementene som ligger utenfor dette*/
+    position: fixed;
+    top:0;
    
+}
+a,a:visited{
+    color: black;
 }
 #check_menu{
     display:none;
@@ -80,7 +86,7 @@ nav{
     #check_menu:not(:checked) ~ #navul{
         display:none;
     }
-    nav li a:link,a:hover,a:visited,a:active{
+    ul > a,ul > a:hover,ul > a:visited,ul> a:active{
         text-decoration: none;
         color:white;    
         
@@ -100,8 +106,9 @@ nav{
         
         margin-top: 5px;
     }
-    nav li{
+    li{
         padding-bottom: 3px;
+        padding-left:3px;
     }
     .menu_icon{
         width:2.5ch; /* tre symbol i vidde*/
@@ -121,6 +128,14 @@ nav{
     h1{
         font-size: xx-large;
     }
+    li:hover{
+        background-color: #3677b3;
+        transition: ease-out 0.2s;
+    }
+    li:active{
+        background-color: #1f4263;
+        
+    }
 }
 
 @media screen and (min-width: 900px){
@@ -131,7 +146,7 @@ nav{
         list-style:none;
         width: 100%;
     }
-    nav li{
+    li{
         padding: 6px 10px;
         background-color: #52ACFF;
         color:white;
@@ -140,27 +155,61 @@ nav{
         margin-top: 5px;
         display: inline-block;
         transition: ease-out 0.2s;
+        width:140px;
+        text-align: center;
     }
-    nav li:hover{
+    li:hover{
         background-color: #3677b3;
         transition: ease-out 0.2s;
     }
-    nav li:active{
+    li:active{
         background-color: #1f4263;
         
     }
-    nav li a:link,a:hover,a:visited,a:active{
+    ul>a:link,ul>a:hover,ul>a:visited,ul>a:active{
         text-decoration: none;
         color:white;    
+        width:140px;
+        height: 100%;
     }
     
 }
 
 
+.bilde{
+    width: max(80%, 320px);
+    display:block;
+    margin:0 auto;
+    border: 2px solid;
+    border-bottom-color: lightgrey;
+    border-right-color: lightgrey;
+    border-top-color: rgb(58, 58, 58);
+    border-left-color: rgb(58, 58, 58);
+}
 
+.bilde_container{
+    padding: 20px;
 
+}
+p{
+    padding-bottom: 4px;
+    line-height:2.5ch;
 
+}
+h4{
+    padding-top: 4px;
+}
+h2{
+    padding-top: 6px;
+    padding-bottom: 3px;
+}
 
+#p1{
+    margin-top: 50px;
+    padding: 4px;
+    font-size:24px;
+    border: 1px solid #1d1d1d;
+}
 /* . definerer class */
 /* # definerer id */
 /* du kan liste elementer med komma */

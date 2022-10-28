@@ -3,30 +3,59 @@
      The DOCTYPE declaration is an instruction to the web browser about what version of HTML the page is written in.
       This ensures that the web page is parsed the same way by different web browsers-->
 <html>
-    <!--An HTML element is a component of an HTML document that tells a web browser how to structure and interpret a part of the HTML document.-->
+<!--An HTML element is a component of an HTML document that tells a web browser how to structure and interpret a part of the HTML document.-->
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--The <meta> tag defines metadata about an HTML document. Metadata is data (information) about data. 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--The <meta> tag defines metadata about an HTML document. Metadata is data (information) about data. 
     <meta> tags always go inside the <head> element, and are typically used to specify character set, page description, keywords, author of the document, and viewport settings.-->
-<title>My first website</title>
-<link rel="stylesheet" href="styles.css">
+    <title>Odd Erik Blixt Haaskjold</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <nav>
         <input type="checkbox" id="check_menu"><label for="check_menu" class="menu_icon">☰</label>
         <ul id="navul">
-            <li><a href="index.html">Hjemmeside</a></li>
-            <li><a href="prod.html">Produksjon</a></li>
-            <li><a href="IKT.html">IKT</a></li>
-            <li><a href="amalie_skram.html">Amalie Skram</a></li>
-            <li><a href="finn_meg.html">Finn Meg Gjennom</a></li>
+            <a href="index.html"><li>Hjem</li></a>
+            <a href="prod.html"><li>Websiden</li></a>
+            <a href="IKT.html"><li>Fotoprosjekt</li></a>
+            <a href="amalie_skram.html"><li>Amalie Skram</li></a>
+
 
         </ul>
     </nav>
     <section>
-        <h1>PRODUKSJON</h1>
-    
+        <h1>Denne websiden</h1>
+        <p>Denne websiden er det første prosjektet som vi har hatt innenfor informasjonsteknologi faget. Dette er den
+            første versjonen av websiden og målet med den er å bygge en responsiv og tilgjengelig side. Responsiv betyr
+            at den forandrer seg etter hvilke skjerm brukeren er på.
+            Tilgjengelig vil si at det er lett å navigere siden, også for de som er svaksynte eller blinde. Her hos <a
+                href="https://wave.webaim.org/report#/https://andanorsk.github.io/Hjemmeside/">webaim</a> kan du se
+            hvordan denne siden scorer på tilgjengelighet</p>
+        <p>I denne videoen går jeg gjennom websiden og hvordan den er bygget opp:</p><iframe width="560" height="315" src="https://www.youtube.com/embed/qxmFpwFU_OM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="p1">
+            <h4>Egenvurdering</h4>
+            <p>Før jeg begynte på dette prosjektet kunne jeg ingenting om CSS og HTML. Gjennom denne oppgaven har jeg
+                lært å strukturere en webside i innhold og struktur i html, og utseende i CSS.
+            </p>
+            <p> Jeg har lært å bruke forskjellige HTML elementer, som p, div, h1, body også videre. I HTML dokumentet
+                har jeg delt det inn i head og body, mer om det i videoen.
+                Jeg har også lært hvordan man bruker forskjellig attributter inne i HTML elementene for å gi dem ulike
+                egenskaper.
+            </p>
+            <p>I CSS har jeg lært hvordan man formaterer ett element. Jeg har også lært hva man skal formatere etter
+                element, klasse eller id.
+                Ett av de vanskligste problemene jeg hadde oppsto når jeg holdte på å gjøre siden responsiv. Jeg ville
+                ha en meny som vises over hele toppen når siden er stor nok, men som vises som en droppdown meny når man
+                er på mobil eller lignende.
+                Her måtte jeg lære å bruke @media CSS taggen for å spesifisere hvordan utseende skulle være ved
+                forskjellige størrelser.
+                I tilleg brukte jeg en usynlig sjekkboks for å kunne vise eller gjemme dropdown menyen.
+            </p> <p>I forbindelse med at jeg skulle legge dette ut på github pages måtte jeg lære å bruke git. Dette er noe jeg vil lære mer om.</p>
+<p>Jeg syntes det var kult å få laget noe som ble til noe.</p>
+        </div>
 
     </section>
     <div class="logo_holder">
