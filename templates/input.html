@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block container %}
+{{ okornot }}
+<form method="post">
+
+    <label for="tittel">Tittel:</label><br>
+    <input type="text" id="tittel" name="tittel" ><br>
+
+    <label for="url">Url:</label><br>
+    <input type="text" id="url" name="url"><br>
+    
+    <label for="beskrivelse">Beskrivelse:</label><br>
+    <input type="text" id="beskrivelse" name="beskrivelse"><br>
+
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}

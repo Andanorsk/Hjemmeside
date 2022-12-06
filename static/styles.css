@@ -210,6 +210,10 @@ h2{
     font-size:24px;
     border: 1px solid #1d1d1d;
 }
+.artikkel{
+    padding-bottom: 10px;
+    
+}
 /* . definerer class */
 /* # definerer id */
 /* du kan liste elementer med komma */

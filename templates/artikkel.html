@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block container %}
+    {% for artikkel in data %}
+    <div class="artikkel">
+    <h3>{{ artikkel['tittel'] }}</h3>
+        <p><a href="{{ artikkel['url'] }}">{{ artikkel['url'] }}</a><br>
+        {{ artikkel['beskrivelse'] }} </p>
+        </div>        
+    {% endfor %}
+{% endblock %}
