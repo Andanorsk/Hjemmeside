@@ -1,4 +1,13 @@
 from flask import Flask, render_template, request, url_for, flash, redirect
+import sqlalchemy
+from MySQLdb import _mysql
+
+host='localhost'
+user='root'
+password='mysqlpass'
+datab='hjemmeside'
+dbc=_mysql.connect(host=host, user=user,password=password, database=datab)
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'wergfc3453f63d4uwger6uf5trdf42d5'
@@ -22,9 +31,13 @@ def ikt():
 @app.route('/artikkel')
 def artikkel():
     # hente data
-    data=[]
-    data.append({"tittel":"Forms", "url":"https://www.digitalocean.com/community/tutorials/how-to-use-web-forms-in-a-flask-application", "beskrivelse":"Her fant jeg hvordan jeg skulle bruke forms i flask"})
-    data.append({"tittel":"Flask tutorial", "url":"https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world", "beskrivelse":"Her lærte jeg Flask"})
+    dbc.query("""SELECT Tittel, ArtikkelUrl, Beskrivelse FROM artikkel""")
+    r=dbc.store_result()
+    data=r.fetch_row(how=1, maxrows=0)
+    print(data)
+    # data=[]
+    # data.append({"tittel":"Forms", "url":"https://www.digitalocean.com/community/tutorials/how-to-use-web-forms-in-a-flask-application", "beskrivelse":"Her fant jeg hvordan jeg skulle bruke forms i flask"})
+    # data.append({"tittel":"Flask tutorial", "url":"https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world", "beskrivelse":"Her lærte jeg Flask"})
     return render_template('artikkel.html', data=data)
 
 @app.route('/input', methods=('GET', 'POST') )
