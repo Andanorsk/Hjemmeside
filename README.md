@@ -12,9 +12,14 @@ https://flask.palletsprojects.com/en/2.1.x/tutorial/
 Hvordan sette opp venv i VS code
 1. Install extension: Python fra mixcrosoft.com
 2. Install python 3.10
-3. sett opp venv ved å velge: ?
+3. sett opp venv ved å velge: 
+4. ctrl + shift + p 
+5. skriv "Python: Create Enviroment"
+6. trykk på Venv 
+7. velg riktig python versjon
 
 Husk å sette miljø(windows) variabel: 
+
 $ set FLASK_APP=main.py
 
 
@@ -23,3 +28,8 @@ $ pip freeze > requirements.txt
 
 For å installere dette på en annen maskin: 
 $ pip install -r requirements.txt
+
+
+To connect to the DB
+pip install SQLAlchemy
+pip install mysql-connector-python
