@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, url_for, flash, redirect
 import sqlalchemy
 from MySQLdb import _mysql
 
+# Her setter jeg opp connection til basen, og dbc variablelen brukes senere for å hente og sende data fra databasen.
 host='localhost'
 user='root'
 password='mysqlpass'
@@ -37,13 +38,14 @@ def ikt():
 @app.route('/artikkel')
 def artikkel():
     # hente data
+    # Først lagert jeg en spørring som bruker SQL 
+    # SQL-en er et strukturert spørrespråk
+    # dbc.query spør databasen om 
     dbc.query("""SELECT Tittel, ArtikkelUrl, Beskrivelse FROM artikkel""")
     r=dbc.store_result()
     data=r.fetch_row(how=1, maxrows=0)
     print(data)
-    # data=[]
-    # data.append({"tittel":"Forms", "url":"https://www.digitalocean.com/community/tutorials/how-to-use-web-forms-in-a-flask-application", "beskrivelse":"Her fant jeg hvordan jeg skulle bruke forms i flask"})
-    # data.append({"tittel":"Flask tutorial", "url":"https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world", "beskrivelse":"Her lærte jeg Flask"})
+
     return render_template('artikkel.html', data=data)
 
 @app.route('/input', methods=('GET', 'POST') )
@@ -52,7 +54,10 @@ def input():
         tittel = request.form['tittel']
         url = request.form['url']
         beskrivelse = request.form['beskrivelse']
-        # Lagre dataene
+          # Lagre dataene
+        dbc.query(f'''INSERT INTO artikkel (Tittel, ArtikkelUrl, Beskrivelse) VALUES ({tittel}, {url}, {beskrivelse});''')
+
+      
 
         # Returnere OK hvis lagret
         return  render_template('input.html', okornot="Dataene ble lagret")
