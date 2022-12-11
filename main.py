@@ -1,3 +1,4 @@
+# Flask er en python pakke som fungerer som en webserver.
 from flask import Flask, render_template, request, url_for, flash, redirect
 import sqlalchemy
 from MySQLdb import _mysql
