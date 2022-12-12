@@ -79,7 +79,7 @@ nav{
 #check_menu{
     display:none;
 }
-@media screen and (max-width: 900px){
+@media screen and (max-width: 1000px){
     /* buker usynlig checkbox for å toggle på og av menyen i #navul */
 
     #check_menu:not(:checked) ~ #navul{
@@ -135,9 +135,13 @@ nav{
         background-color: #1f4263;
         
     }
+    .registrer{
+        padding-left:82%;
+        padding-top:5px;
+    }
 }
 
-@media screen and (min-width: 900px){
+@media screen and (min-width: 1001px){
     .menu_icon{
         display:none;
     }
@@ -171,7 +175,12 @@ nav{
         width:140px;
         height: 100%;
     }
-    
+
+    .registrer{
+        padding-left:90%;
+        padding-top:5px;
+    }
+
 }
 
 
@@ -224,10 +233,7 @@ h2{
 }
 
 
-.registrer{
-    margin-left: 75%;
-    padding-top:5px;
-}
+
 /* . definerer class */
 /* # definerer id */
 /* du kan liste elementer med komma */
