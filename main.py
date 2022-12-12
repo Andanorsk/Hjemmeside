@@ -54,8 +54,11 @@ def input():
         tittel = request.form['tittel']
         url = request.form['url']
         beskrivelse = request.form['beskrivelse']
+        
           # Lagre dataene 
-        dbc.query(f'''INSERT INTO artikkel (Tittel, ArtikkelUrl, Beskrivelse) VALUES ({tittel}, {url}, {beskrivelse});''')
+        
+        print(f"""INSERT INTO artikkel (Tittel, ArtikkelUrl, Beskrivelse) VALUES ('{tittel}', '{url}', '{beskrivelse}');""")
+        dbc.query(f"""INSERT INTO artikkel (Tittel, ArtikkelUrl, Beskrivelse) VALUES ('{tittel}', '{url}', '{beskrivelse}');""")
 
       
 
