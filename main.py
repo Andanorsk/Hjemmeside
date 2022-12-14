@@ -40,32 +40,39 @@ def artikkel():
     # hente data
     # Først lagert jeg en spørring som bruker SQL 
     # SQL-en er et strukturert spørrespråk
-    # dbc.query spør databasen om 
+    # dbc.query spør databasen om å returnere Tittel, ArtikkelUrl og beskrivelse fra tabellen "artikkel"
     dbc.query("""SELECT Tittel, ArtikkelUrl, Beskrivelse FROM artikkel""")
     r=dbc.store_result()
     data=r.fetch_row(how=1, maxrows=0)
     print(data)
-
+    # "data" som er hentet fra databasen sendes ut til nettside templaten som generer innholdet der.
     return render_template('artikkel.html', data=data)
 
 @app.route('/input', methods=('GET', 'POST') )
 def input():
+    # hvis noen bare ber om siden så sender vi dem formen.
+    if request.method == 'GET':
+        return render_template('input.html', okornot="")
+    
+    # hvis noen sender inn data fra html-formen så behandler vi dem og lagrer i databasen
     if request.method == 'POST':
+        # vi henter ut form dataene fra requesten som er sendt til flask webserveren
         tittel = request.form['tittel']
         url = request.form['url']
         beskrivelse = request.form['beskrivelse']
         
-          # Lagre dataene 
+        # Lagre dataene 
         
-        print(f"""INSERT INTO artikkel (Tittel, ArtikkelUrl, Beskrivelse) VALUES ('{tittel}', '{url}', '{beskrivelse}');""")
+        # print(f"""INSERT INTO artikkel (Tittel, ArtikkelUrl, Beskrivelse) VALUES ('{tittel}', '{url}', '{beskrivelse}');""")
+        
+        # Sett inn dataene tittel, url og beskrivelse (values) definert over, i feltene (Tittel, ArtikkelUrl, Beskrivelse) i tabellene artikkel
         dbc.query(f"""INSERT INTO artikkel (Tittel, ArtikkelUrl, Beskrivelse) VALUES ('{tittel}', '{url}', '{beskrivelse}');""")
 
       
 
         # Returnere OK hvis lagret
         return  render_template('input.html', okornot="Dataene ble lagret")
-    if request.method == 'GET':
-        return render_template('input.html', okornot="")
+
 
 if __name__ == '__main__':
     # APP.run(host='0.0.0.0', port=5000, debug=True)

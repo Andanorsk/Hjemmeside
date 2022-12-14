@@ -6,7 +6,7 @@
     <div class="artikkel">
     <h3>{{ artikkel['Tittel'].decode("utf-8") }}</h3>
         <p><a href="{{ artikkel['ArtikkelUrl'].decode("utf-8") }}">{{ artikkel['ArtikkelUrl'].decode("utf-8") }}</a><br>
-        {{ artikkel['Beskrivelse'] }} </p>
+        {{ artikkel['Beskrivelse'].decode("utf-8") }} </p>
         </div>        
     {% endfor %}
     
