@@ -60,7 +60,8 @@ def input():
         tittel = request.form['tittel']
         url = request.form['url']
         beskrivelse = request.form['beskrivelse']
-        
+        # Her burde jeg rense input dataene for å unngå sql injections 
+
         # Lagre dataene 
         
         # print(f"""INSERT INTO artikkel (Tittel, ArtikkelUrl, Beskrivelse) VALUES ('{tittel}', '{url}', '{beskrivelse}');""")
@@ -71,7 +72,7 @@ def input():
       
 
         # Returnere OK hvis lagret
-        return  render_template('input.html', okornot="Dataene ble lagret")
+        return redirect(url_for('artikkel'))
 
 
 if __name__ == '__main__':
