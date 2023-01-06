@@ -43,7 +43,7 @@ def artikkel():
     # dbc.query spør databasen om å returnere Tittel, ArtikkelUrl og beskrivelse fra tabellen "artikkel"
     dbc.query("""SELECT Tittel, ArtikkelUrl, Beskrivelse FROM artikkel""")
     r=dbc.store_result()
-    data=r.fetch_row(how=1, maxrows=0)
+    data=r.fetch_row(how=1, maxrows=0) # how=1 betyr retur som dict, maxrows=0 returnerer alle rows.
     print(data)
     # "data" som er hentet fra databasen sendes ut til nettside templaten som generer innholdet der.
     return render_template('artikkel.html', data=data)
