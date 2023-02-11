@@ -42,3 +42,13 @@ Hvordan starte webserveren
 4. python main.py  for å starte serveren
 5 åpne chrome og gå till webadressen
 6. Hvis "module not found" så kjør - pip install -r requirements.txt
+
+hvis problemer med å starte mamp oppstår så: 
+ctrl + alt + del
+task manager
+prosseses
+avslutt mysqld 
+avslutt mamp
+avslutt httpd
+(avslutt ggjøres med å høyre klikke og end prosses)
+restard mamp
