@@ -35,6 +35,10 @@ def prod():
 def ikt():
     return render_template('IKT.html')
 
+@app.route('/four')
+def four():
+    return render_template('4_in_a_row.html')
+
 @app.route('/artikkel')
 def artikkel():
     # hente data
