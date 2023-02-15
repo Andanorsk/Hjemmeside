@@ -232,6 +232,17 @@ h2{
     margin-top: 10px;
 }
 
+/* connect 4 css*/
+#brett{
+    height: 540px;
+    width: 630px;
+    background-color: blue;
+    border: 10px solid navy;
+
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
 
 /* . definerer class */
 /* # definerer id */
