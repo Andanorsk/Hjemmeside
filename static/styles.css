@@ -233,6 +233,12 @@ h2{
 }
 
 /* connect 4 css*/
+#four{
+    text-align: center;
+    
+}
+
+
 #brett{
     height: 540px;
     width: 630px;
