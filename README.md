@@ -50,5 +50,5 @@ prosseses
 avslutt mysqld 
 avslutt mamp
 avslutt httpd
-(avslutt ggjøres med å høyre klikke og end prosses)
-restard mamp
+(avslutt gjøres med å høyre klikke og end prosses)
+restart mamp
