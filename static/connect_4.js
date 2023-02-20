@@ -9,6 +9,18 @@ var currColumns;
 var rows = 6;
 var columns = 7;
 
+function doConfetti() {
+  // Pass in the id of an element
+let confetti = new Confetti('Winner');
+// Edit given parameters
+confetti.setCount(1000);
+confetti.setSize(5);
+confetti.setPower(40);
+confetti.setFade(false);
+confetti.destroyTarget(false);
+confetti.bursts(true);
+}
+
 window.onload = function () {
   setGame();
 };
@@ -134,8 +146,13 @@ function setWinner(r, c) {
   let winner = document.getElementById("Winner");
   if (board[r][c] == playerRed) {
     winner.innerText = "Red Wins";
+
   } else {
     winner.innerText = "Yellow Wins";
+    
   }
+  doConfetti();
   gameOver = true;
 }
+
+
