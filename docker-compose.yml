@@ -21,8 +21,8 @@ services:
     # build: frontend/.
   main:
     build: .
-    image: odderik:0.00005
-    
+    image: odderik:0.000055
+
     links:
       - mysqldb
     ports:
