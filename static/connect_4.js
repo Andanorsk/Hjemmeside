@@ -152,10 +152,11 @@ function setWinner(r, c) {
     winner.innerText = "Yellow Wins";
     
   }
+  currPlayer = playerZero;
   doConfetti();
-  
+
   gameOver = true;
-    currPlayer = playerZero;
+
     
   }
 
