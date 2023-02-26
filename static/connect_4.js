@@ -1,5 +1,6 @@
 var playerRed = "R";
 var playerYellow = "Y";
+var playerZero
 var currPlayer = playerRed;
 
 var gameOver = false;
@@ -153,6 +154,9 @@ function setWinner(r, c) {
   }
   doConfetti();
   gameOver = true;
-}
+    currPlayer = playerZero;
+    
+  }
+
 
 
