@@ -4,7 +4,7 @@ import sqlalchemy
 from MySQLdb import _mysql
 
 # Her setter jeg opp connection til basen, og dbc variablelen brukes senere for å hente og sende data fra databasen.
-host='localhost'
+host='mysqldb'
 user='root'
 password='mysqlpass'
 datab='hjemmeside'
