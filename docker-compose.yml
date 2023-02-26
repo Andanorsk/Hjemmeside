@@ -11,6 +11,7 @@ services:
     environment:
       - MYSQL_DATABASE=hjemmeside
       - MYSQL_ROOT_PASSWORD=mysqlpass
+
     volumes:
       - mysqldb:/var/lib/mysql
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -21,6 +22,8 @@ services:
   main:
     build: .
     image: odderik:0.00004
+    links:
+      - mysqldb
     ports:
       - "6000:80"
     # remember portainer names might be different in connectionstring.

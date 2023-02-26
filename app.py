@@ -8,7 +8,8 @@ host='mysqldb'
 user='root'
 password='mysqlpass'
 datab='hjemmeside'
-# dbc=_mysql.connect(host=host, user=user,password=password, database=datab)
+port='3306'
+dbc=_mysql.connect(host=host, port=port, user=user,password=password, database=datab)
 
 
 # Her starter flask appen og den konffigureres   
