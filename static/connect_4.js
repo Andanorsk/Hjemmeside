@@ -153,6 +153,7 @@ function setWinner(r, c) {
     
   }
   doConfetti();
+  
   gameOver = true;
     currPlayer = playerZero;
     
