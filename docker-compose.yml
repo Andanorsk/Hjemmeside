@@ -20,7 +20,7 @@ services:
     # build: frontend/.
   main:
     build: .
-    image: odderik:0.00002
+    image: odderik:0.00003
     ports:
       - "6000:80"
     # remember portainer names might be different in connectionstring.
