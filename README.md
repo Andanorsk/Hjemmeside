@@ -37,7 +37,7 @@ pip install mysql-connector-python
 Hvordan starte webserveren
 1. start mamp
 2. start en terminal
-3. sjekk om venv kjører4
+3. sjekk om venv kjører
 3b. hvis ikke venv kjører - kjør venv.cmd i terminalen
 4. python app.py  for å starte serveren
 5 åpne chrome og gå till webadressen
@@ -50,5 +50,5 @@ prosseses
 avslutt mysqld 
 avslutt mamp
 avslutt httpd
-(avslutt ggjøres med å høyre klikke og end prosses)
-restard mamp
+(avslutt gjøres med å høyre klikke og end prosses)
+restart mamp
