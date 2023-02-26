@@ -16,7 +16,7 @@ services:
     # build: frontend/.
   main:
     build: .
-    image: odderik:0.00006556322231
+    image: odderik:0.000065563222313
     links:
       - db
     ports:

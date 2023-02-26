@@ -10,6 +10,8 @@ var currColumns;
 var rows = 6;
 var columns = 7;
 
+let winner = document.getElementById("Winner");
+
 function doConfetti() {
   // Pass in the id of an element
 let confetti = new Confetti('Winner');
@@ -29,7 +31,7 @@ window.onload = function () {
 function setGame() {
   board = [];
   currColumns = [5, 5, 5, 5, 5, 5, 5];
-
+  currDraw =[-1, -1, -1, -1, -1, -1, -1];
   //ittererer gjennom alle radene
   for (let r = 0; r < rows; r++) {
     let row = [];
@@ -66,16 +68,28 @@ function setPiece() {
   if (currPlayer == playerRed) {
     tile.classList.add("red-piece");
     currPlayer = playerYellow;
-  } else {
+  } else if (currPlayer == playerYellow) {
     tile.classList.add("yellow-piece");
     currPlayer = playerRed;
+
   }
   r -= 1;
   currColumns[c] = r;
+
   checkWinner();
 }
 function checkWinner() {
+  console.log(currColumns)
   // Check horrisontally winner
+  if (currColumns.toString() == currDraw.toString()) {
+    winner.innerText = "Draw!";
+    currPlayer = playerZero;
+
+    gameOver = true;
+    console.log("draw")
+
+  }
+
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < columns - 3; c++) {
       if (board[r][c] != " ") {
@@ -144,7 +158,7 @@ function checkWinner() {
 }
 
 function setWinner(r, c) {
-  let winner = document.getElementById("Winner");
+
   if (board[r][c] == playerRed) {
     winner.innerText = "Red Wins";
 
@@ -153,6 +167,7 @@ function setWinner(r, c) {
     
   }
   currPlayer = playerZero;
+
   doConfetti();
 
   gameOver = true;
