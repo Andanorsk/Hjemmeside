@@ -16,11 +16,10 @@ services:
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
       - '3306:3306'
-    command: [--auth]
     # build: frontend/.
   main:
     build: .
-    image: odderik:0.000065563222
+    image: odderik:0.0000655632223
     links:
       - db
     ports:
