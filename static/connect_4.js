@@ -16,12 +16,11 @@ function doConfetti() {
   // Pass in the id of an element
 let confetti = new Confetti('Winner');
 // Edit given parameters
-confetti.setCount(1000);
+confetti.setCount(100);
 confetti.setSize(5);
 confetti.setPower(40);
 confetti.setFade(false);
 confetti.destroyTarget(false);
-confetti.bursts(true);
 }
 
 window.onload = function () {
@@ -169,6 +168,8 @@ function setWinner(r, c) {
   currPlayer = playerZero;
 
   doConfetti();
+  document.getElementById("Winner").click();
+  winner.click();
 
   gameOver = true;
 
