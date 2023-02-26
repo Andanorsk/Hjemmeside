@@ -9,7 +9,7 @@ user='root'
 password='mysqlpass'
 datab='hjemmeside'
 port=3306
-dbc=_mysql.connect(host=host, port=port, user=user,password=password, database=datab)
+dbc=_mysql.connect(host=host, user=user,password=password, database=datab)
 
 
 # Her starter flask appen og den konffigureres   
