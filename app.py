@@ -8,7 +8,7 @@ host='mysqldb'
 user='root'
 password='mysqlpass'
 datab='hjemmeside'
-port='3306'
+port=3306
 dbc=_mysql.connect(host=host, port=port, user=user,password=password, database=datab)
 
 
