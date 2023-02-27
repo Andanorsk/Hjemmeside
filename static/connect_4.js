@@ -186,5 +186,29 @@ function setWinner(r, c) {
     
   }
 
+  function newGame(){
+    if (gameOver == true){
+      board = [];
+      currColumns = [5, 5, 5, 5, 5, 5, 5];
+      //ittererer gjennom alle radene
+      for (let r = 0; r < rows; r++) {
+        let row = [];
+        //ittererer gjennom alle colonnene
+        for (let c = 0; c < columns; c++) {
+          //javascript
+          row.push(" ");
+          //html
+          let tile = document.createElement("div");
+          tile.id = r.toString() + "-" + c.toString();
+          tile.classList.add("tile");
+          tile.addEventListener("click", setPiece);
+          document.getElementById("brett").append(tile);
+        }
+        board.push(row);
+      }
+    }
+  }
+    
+  
 
 
