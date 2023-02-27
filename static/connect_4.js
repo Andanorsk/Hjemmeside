@@ -11,6 +11,8 @@ var rows = 6;
 var columns = 7;
 
 let winner = document.getElementById("Winner");
+winner.innerText = "Red players turn";
+
 
 function doConfetti() {
   // Pass in the id of an element
@@ -30,7 +32,7 @@ window.onload = function () {
 function setGame() {
   board = [];
   currColumns = [5, 5, 5, 5, 5, 5, 5];
-  currDraw =[-1, -1, -1, -1, -1, -1, -1];
+  Draw =[-1, -1, -1, -1, -1, -1, -1];
   //ittererer gjennom alle radene
   for (let r = 0; r < rows; r++) {
     let row = [];
@@ -64,12 +66,20 @@ function setPiece() {
 
   board[r][c] = currPlayer;
   let tile = document.getElementById(r.toString() + "-" + c.toString());
+
   if (currPlayer == playerRed) {
+    winner.innerText = "Yellow players turn";
     tile.classList.add("red-piece");
+ 
     currPlayer = playerYellow;
+ 
   } else if (currPlayer == playerYellow) {
+
+    winner.innerText = "Red players turn";
     tile.classList.add("yellow-piece");
+
     currPlayer = playerRed;
+   
 
   }
   r -= 1;
@@ -80,7 +90,7 @@ function setPiece() {
 function checkWinner() {
   console.log(currColumns)
   // Check horrisontally winner
-  if (currColumns.toString() == currDraw.toString()) {
+  if (currColumns.toString() == Draw.toString()) {
     winner.innerText = "Draw!";
     currPlayer = playerZero;
 
