@@ -39,7 +39,7 @@ Hvordan starte webserveren
 2. start en terminal
 3. sjekk om venv kjører
 3b. hvis ikke venv kjører - kjør venv.cmd i terminalen
-4. python main.py  for å starte serveren
+4. python app.py  for å starte serveren
 5 åpne chrome og gå till webadressen
 6. Hvis "module not found" så kjør - pip install -r requirements.txt
 

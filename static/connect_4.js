@@ -12,7 +12,7 @@ var columns = 7;
 function doConfetti() {
   // Pass in the id of an element
 let confetti = new Confetti('Winner');
-// Edit given parameters
+// Settings for confetti
 confetti.setCount(1000);
 confetti.setSize(5);
 confetti.setPower(40);
@@ -21,6 +21,7 @@ confetti.destroyTarget(false);
 confetti.bursts(true);
 }
 
+// Button that lets the player restart whenever to make it easier for mobile players to play games back to back
 window.onload = function () {
   setGame();
 };
