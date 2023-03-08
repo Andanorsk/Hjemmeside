@@ -4,11 +4,12 @@ import sqlalchemy
 from MySQLdb import _mysql
 
 # Her setter jeg opp connection til basen, og dbc variablelen brukes senere for å hente og sende data fra databasen.
-host='localhost'
+host='db'
 user='root'
 password='mysqlpass'
 datab='hjemmeside'
-dbc=_mysql.connect(host=host, user=user,password=password, database=datab)
+port=3306
+#dbc=_mysql.connect(host=host, port=port, user=user,password=password, database=datab)
 
 
 # Her starter flask appen og den konffigureres   

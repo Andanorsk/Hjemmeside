@@ -1,5 +1,6 @@
 var playerRed = "R";
 var playerYellow = "Y";
+var playerZero
 var currPlayer = playerRed;
 
 var gameOver = false;
@@ -9,16 +10,19 @@ var currColumns;
 var rows = 6;
 var columns = 7;
 
+let winner = document.getElementById("Winner");
+winner.innerText = "Red players turn";
+
+
 function doConfetti() {
   // Pass in the id of an element
 let confetti = new Confetti('Winner');
-// Settings for confetti
+// Edit given parameters
 confetti.setCount(1000);
 confetti.setSize(5);
 confetti.setPower(40);
 confetti.setFade(false);
 confetti.destroyTarget(false);
-confetti.bursts(true);
 }
 
 // Button that lets the player restart whenever to make it easier for mobile players to play games back to back
@@ -29,7 +33,7 @@ window.onload = function () {
 function setGame() {
   board = [];
   currColumns = [5, 5, 5, 5, 5, 5, 5];
-
+  Draw =[-1, -1, -1, -1, -1, -1, -1];
   //ittererer gjennom alle radene
   for (let r = 0; r < rows; r++) {
     let row = [];
@@ -63,19 +67,39 @@ function setPiece() {
 
   board[r][c] = currPlayer;
   let tile = document.getElementById(r.toString() + "-" + c.toString());
+
   if (currPlayer == playerRed) {
+    winner.innerText = "Yellow players turn";
     tile.classList.add("red-piece");
+ 
     currPlayer = playerYellow;
-  } else {
+ 
+  } else if (currPlayer == playerYellow) {
+
+    winner.innerText = "Red players turn";
     tile.classList.add("yellow-piece");
+
     currPlayer = playerRed;
+   
+
   }
   r -= 1;
   currColumns[c] = r;
+
   checkWinner();
 }
 function checkWinner() {
+  console.log(currColumns)
   // Check horrisontally winner
+  if (currColumns.toString() == Draw.toString()) {
+    winner.innerText = "Draw!";
+    currPlayer = playerZero;
+
+    gameOver = true;
+    console.log("draw")
+
+  }
+
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < columns - 3; c++) {
       if (board[r][c] != " ") {
@@ -144,7 +168,7 @@ function checkWinner() {
 }
 
 function setWinner(r, c) {
-  let winner = document.getElementById("Winner");
+
   if (board[r][c] == playerRed) {
     winner.innerText = "Red Wins";
 
@@ -152,8 +176,40 @@ function setWinner(r, c) {
     winner.innerText = "Yellow Wins";
     
   }
+  currPlayer = playerZero;
+
   doConfetti();
+  document.getElementById("Winner").click();
+  winner.click();
+
   gameOver = true;
-}
+
+    
+  }
+
+  function newGame(){
+    if (gameOver == true){
+      board = [];
+      currColumns = [5, 5, 5, 5, 5, 5, 5];
+      //ittererer gjennom alle radene
+      for (let r = 0; r < rows; r++) {
+        let row = [];
+        //ittererer gjennom alle colonnene
+        for (let c = 0; c < columns; c++) {
+          //javascript
+          row.push(" ");
+          //html
+          let tile = document.createElement("div");
+          tile.id = r.toString() + "-" + c.toString();
+          tile.classList.add("tile");
+          tile.addEventListener("click", setPiece);
+          document.getElementById("brett").append(tile);
+        }
+        board.push(row);
+      }
+    }
+  }
+    
+  
 
 

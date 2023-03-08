@@ -1,0 +1,29 @@
+version: '3.8'
+# Usage:
+#   docker stack deploy -c stack.yml mongo (or docker-compose -f stack.yml up)
+# comment
+services:
+  db:
+    image: mysql:8.0
+    cap_add:
+      - SYS_NICE
+    restart: always
+    environment:
+      - MYSQL_DATABASE=hjemmeside
+      - MYSQL_ROOT_PASSWORD=mysqlpass
+    ports:
+      - '3306:3306'
+    # build: frontend/.
+  main:
+    build: .
+    image: odderik:0.000071
+    links:
+      - db
+    ports:
+      - "6000:80"
+    # remember portainer names might be different in connectionstring.
+volumes:
+  db:
+    driver: local
+  init-mongo.js:
+    driver: local
