@@ -9,7 +9,6 @@ var currColumns;
 
 var rows = 6;
 var columns = 7;
-
 let winner = document.getElementById("Winner");
 winner.innerText = "Red players turn";
 
