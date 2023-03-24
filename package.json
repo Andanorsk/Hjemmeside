@@ -1,0 +1,23 @@
+{
+  "name": "hjemmeside",
+  "version": "1.0.0",
+  "description": "Hvordan konfiguirere terminalen i VS code:\r https://stackoverflow.com/questions/69605313/vs-code-terminal-activate-ps1-cannot-be-loaded-because-running-scripts-is-disa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andanorsk/Hjemmeside.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andanorsk/Hjemmeside/issues"
+  },
+  "homepage": "https://github.com/Andanorsk/Hjemmeside#readme",
+  "dependencies": {
+    "firebase": "^9.18.0"
+  }
+}
